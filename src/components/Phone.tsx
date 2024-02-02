@@ -1,17 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import { TbReload } from "react-icons/tb";
+
 import { HiOutlineDotsVertical } from "react-icons/hi";
-import { AnimatePresence, motion, useAnimation } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function Phone() {
 
-    const controls = useAnimation();
 
-    const handleGoBackToInitialState = () => {
-        controls.start('initial'); // 'initial' should be the key you defined in variants
-    };
 
     return (
         <div className='bg-white h-[515.19px] w-[247px] py-[11px] px-[9.5px] relative rounded-[30px] shadow-2xl'>
@@ -38,8 +34,8 @@ export default function Phone() {
                             <p className="text-[8px] text-white">Available to Walk</p>
                         </div>
                     </div>
-                    {/* <HiOutlineDotsVertical className="text-white" /> */}
-                    <TbReload className="text-white hover:cursor-pointer" onClick={handleGoBackToInitialState} />
+                    <HiOutlineDotsVertical className="text-white" />
+                    {/* <TbReload className="text-white hover:cursor-pointer" onClick={handleGoBackToInitialState} /> */}
                 </div>
                 <div className="pt-[11px] px-[7.5px] pb-4 text-[8px] text-[#9341C8]  flex flex-col gap-4 ">
                     <AnimatePresence>
@@ -47,7 +43,7 @@ export default function Phone() {
                             <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px] mb-2"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 1.2 }, delay: 1.2 }}
+                                transition={{ opacity: { duration: 0.2 } }}
                                 style={{
                                     originX: 0
                                 }}
@@ -55,7 +51,7 @@ export default function Phone() {
                             <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 2.2 }, delay: 2.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 1.2 }, delay: 1.2 }}
                                 style={{
                                     originX: 0
                                 }}
@@ -65,7 +61,7 @@ export default function Phone() {
                             <motion.div className="flex gap-2"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 3.2 }, delay: 3.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 2.2 }, delay: 2.2 }}
                                 style={{
                                     originX: 1
                                 }}
@@ -95,7 +91,7 @@ export default function Phone() {
                             <motion.p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 4.2 }, delay: 4.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 3.2 }, delay: 3.2 }}
                                 style={{
                                     originX: 1
                                 }}
@@ -103,7 +99,7 @@ export default function Phone() {
                             <motion.p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 5.2 }, delay: 5.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 4.2 }, delay: 4.2 }}
                                 style={{
                                     originX: 1
                                 }}
@@ -113,7 +109,7 @@ export default function Phone() {
                             <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 6.2 }, delay: 6.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 5.2 }, delay: 5.2 }}
                                 style={{
                                     originX: 0
                                 }}
@@ -121,7 +117,7 @@ export default function Phone() {
                             <motion.div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 7.2 }, delay: 7.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 6.2 }, delay: 6.2 }}
                                 style={{
                                     originX: 0
                                 }}
@@ -137,7 +133,7 @@ export default function Phone() {
                             <motion.div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ opacity: { duration: 0.2, delay: 8.2 }, delay: 8.2 }}
+                                transition={{ opacity: { duration: 0.2, delay: 7.2 }, delay: 7.2 }}
                                 style={{
                                     originX: 0
                                 }}
