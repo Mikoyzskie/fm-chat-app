@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="flex items-center justify-center">
       <body className={`${inter.className} flex items-center justify-center h-screen max-w-[1440px] w-full m-auto relative`}>
-        <div className="colored absolute md:-left-[90px] -left-[322px] md:-top-[318px] -top-[509px] h-[1018px] w-[510px] bg-gradient-to-bl from-[rgb(232,68,255)] to-[rgb(135,57,255)] rounded-full" />
+        <div className="colored fixed lg:absolute md:-left-[90px] -left-[322px] md:-top-[318px] -top-[509px] h-[1018px] w-[510px] bg-gradient-to-bl from-[rgb(232,68,255)] to-[rgb(135,57,255)] rounded-full" />
 
-        <div className="fixed md:-right-[185px] -right-[323px] md:-bottom-[337px] -bottom-[509px] h-[1018px] w-[510px] bg-gradient-to-tl from-[rgb(232,68,255,0.03)] to-[rgb(135,57,255,0.03)] rounded-full" />
+        <div className="fixed lg:absolute md:-right-[185px] -right-[323px] md:-bottom-[337px] -bottom-[509px] h-[1018px] w-[510px] bg-gradient-to-tl from-[rgb(232,68,255,0.03)] to-[rgb(135,57,255,0.03)] rounded-full" />
         {children}
       </body>
     </html>
