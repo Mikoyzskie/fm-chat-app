@@ -1,15 +1,24 @@
+"use client"
+
 import Image from "next/image"
-import { FaChevronLeft } from "react-icons/fa6";
-import { TbChevronCompactLeft } from "react-icons/tb";
+import { TbReload } from "react-icons/tb";
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import { AnimatePresence, motion, useAnimation } from "framer-motion"
 
 export default function Phone() {
+
+    const controls = useAnimation();
+
+    const handleGoBackToInitialState = () => {
+        controls.start('initial'); // 'initial' should be the key you defined in variants
+    };
+
     return (
-        <div className='bg-white w-[247px] py-[11px] px-[9.5px] relative rounded-[30px] shadow-2xl'>
+        <div className='bg-white h-[515.19px] w-[247px] py-[11px] px-[9.5px] relative rounded-[30px] shadow-2xl'>
             <div className='notch absolute w-[129px] h-[29px] top-0 left-1/2 -translate-x-1/2 bg-white rounded-b-[14px]'>
 
             </div>
-            <div className='bg-[#F5F3F7] rounded-[20px] overflow-hidden border border-[#F5F3F7]'>
+            <div className='bg-[#F5F3F7] rounded-[20px] overflow-hidden border border-[#F5F3F7] flex flex-col h-full justify-between'>
                 <div className='pt-[30px] pl-[15.5px] pr-[16.5px] pb-3 flex items-center justify-between bg-gradient-to-bl from-[rgb(232,68,255)] to-[rgb(135,57,255)] rounded-b-[6px]'>
                     <div className="flex items-center gap-2">
                         {/* <FaChevronLeft className="h-[10px] w-2 text-white" /> */}
@@ -29,61 +38,120 @@ export default function Phone() {
                             <p className="text-[8px] text-white">Available to Walk</p>
                         </div>
                     </div>
-                    <HiOutlineDotsVertical className="text-white" />
+                    {/* <HiOutlineDotsVertical className="text-white" /> */}
+                    <TbReload className="text-white hover:cursor-pointer" onClick={handleGoBackToInitialState} />
                 </div>
-                <div className="pt-[11px] px-[7.5px] pb-4 text-[8px] text-[#9341C8]  flex flex-col gap-4">
-                    <div>
-                        <p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px] mb-2">{"That sounds great. I’d be happy with that."}</p>
-                        <p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]">Could you send over some pictures of your dog, please?</p>
-                    </div>
-                    <div className="flex justify-end flex-col items-end gap-2">
-                        <div className="flex gap-2">
-                            <Image
-                                alt="dog"
-                                src={"/dog-image-1.jpg"}
-                                width={100}
-                                height={100}
-                                className="h-10 w-10 rounded-[10px]"
-                            />
-                            <Image
-                                alt="dog"
-                                src={"/dog-image-2.jpg"}
-                                width={100}
-                                height={100}
-                                className="h-10 w-10 rounded-[10px]"
-                            />
-                            <Image
-                                alt="dog"
-                                src={"/dog-image-3.jpg"}
-                                width={100}
-                                height={100}
-                                className="h-10 w-10 rounded-[10px]"
-                            />
+                <div className="pt-[11px] px-[7.5px] pb-4 text-[8px] text-[#9341C8]  flex flex-col gap-4 ">
+                    <AnimatePresence>
+                        <div>
+                            <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px] mb-2"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 1.2 }, delay: 1.2 }}
+                                style={{
+                                    originX: 0
+                                }}
+                            >{"That sounds great. I’d be happy with that."}</motion.p>
+                            <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 2.2 }, delay: 2.2 }}
+                                style={{
+                                    originX: 0
+                                }}
+                            >Could you send over some pictures of your dog, please?</motion.p>
                         </div>
-                        <p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]">{"Here are a few pictures. She’s a happy girl!"}</p>
-                        <p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]">Can you make it?</p>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
-                        <div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between">
-                            <div className="flex gap-2 items-center">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="6" cy="6" r="5.5" stroke="#E472FF" />
-                                </svg>
-                                <p>30 minute walk</p>
-                            </div>
-                            <p className="text-xs font-bold">$29</p>
+                        <div className="flex justify-end flex-col items-end gap-2">
+                            <motion.div className="flex gap-2"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 3.2 }, delay: 3.2 }}
+                                style={{
+                                    originX: 1
+                                }}
+                            >
+                                <Image
+                                    alt="dog"
+                                    src={"/dog-image-1.jpg"}
+                                    width={100}
+                                    height={100}
+                                    className="h-10 w-10 rounded-[10px]"
+                                />
+                                <Image
+                                    alt="dog"
+                                    src={"/dog-image-2.jpg"}
+                                    width={100}
+                                    height={100}
+                                    className="h-10 w-10 rounded-[10px]"
+                                />
+                                <Image
+                                    alt="dog"
+                                    src={"/dog-image-3.jpg"}
+                                    width={100}
+                                    height={100}
+                                    className="h-10 w-10 rounded-[10px]"
+                                />
+                            </motion.div>
+                            <motion.p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 4.2 }, delay: 4.2 }}
+                                style={{
+                                    originX: 1
+                                }}
+                            >{"Here are a few pictures. She’s a happy girl!"}</motion.p>
+                            <motion.p className="px-2 py-[6px] max-w-[128px] shadow-md text-[#6E5D7E] bg-[#fff] rounded-[10px] rounded-br-[4px] leading-[11px]"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 5.2 }, delay: 5.2 }}
+                                style={{
+                                    originX: 1
+                                }}
+                            >Can you make it?</motion.p>
                         </div>
-                        <div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between">
-                            <div className="flex gap-2 items-center">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="6" cy="6" r="5.5" stroke="#E472FF" />
-                                </svg>
-                                <p>1 hour walk</p>
-                            </div>
-                            <p className="text-xs font-bold">$49</p>
+                        <div className="flex flex-col gap-2">
+                            <motion.p className="px-2 py-[6px] max-w-[128px] bg-[#EEE5F4] rounded-[10px] rounded-bl-[4px] leading-[11px]"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 6.2 }, delay: 6.2 }}
+                                style={{
+                                    originX: 0
+                                }}
+                            >She looks so happy! The time we discussed works. How long shall I take her out for?</motion.p>
+                            <motion.div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 7.2 }, delay: 7.2 }}
+                                style={{
+                                    originX: 0
+                                }}
+                            >
+                                <div className="flex gap-2 items-center">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="6" cy="6" r="5.5" stroke="#E472FF" />
+                                    </svg>
+                                    <p>30 minute walk</p>
+                                </div>
+                                <p className="text-xs font-bold">$29</p>
+                            </motion.div>
+                            <motion.div className="bg-gradient-to-br max-w-[160px] rounded-[10px] rounded-bl-[4px] text-white from-[rgb(232,68,255)] to-[rgb(135,57,255)] py-[10px] pl-2 pr-4 flex items-center justify-between"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ opacity: { duration: 0.2, delay: 8.2 }, delay: 8.2 }}
+                                style={{
+                                    originX: 0
+                                }}
+                            >
+                                <div className="flex gap-2 items-center">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="6" cy="6" r="5.5" stroke="#E472FF" />
+                                    </svg>
+                                    <p>1 hour walk</p>
+                                </div>
+                                <p className="text-xs font-bold">$49</p>
+                            </motion.div>
                         </div>
-                    </div>
+                    </AnimatePresence>
                 </div>
                 <div className="px-[7.5px] pb-[10px]">
                     <div className="py-[4.84px] pr-[4.73px] pl-[19.42px] bg-white rounded-full flex items-center">
