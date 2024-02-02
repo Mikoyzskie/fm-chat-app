@@ -5,7 +5,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 
 export default function Phone() {
     return (
-        <div className='bg-white w-[247px] py-[11px] px-[9.5px] relative rounded-[30px]'>
+        <div className='bg-white w-[247px] py-[11px] px-[9.5px] relative rounded-[30px] shadow-2xl'>
             <div className='notch absolute w-[129px] h-[29px] top-0 left-1/2 -translate-x-1/2 bg-white rounded-b-[14px]'>
 
             </div>
@@ -97,7 +97,6 @@ export default function Phone() {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

@@ -3,5 +3,12 @@
 @tailwind utilities;
 
 body {
-  background-color: #1f1f1f;
+  background-color: #fafafa;
+  overflow: hidden;
 }
+
+/* @media only screen and (){
+  .colored{
+
+  }
+} */
